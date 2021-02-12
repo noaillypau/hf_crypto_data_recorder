@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>972</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox_symbolSelection">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>291</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Symbol Selection</string>
+    </property>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>43</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Select Exchange:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>83</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Select Symbol:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_exchange">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>40</y>
+       <width>121</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_symbol">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>80</y>
+       <width>121</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_addSymbol">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add Symbol</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_Preview">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>220</y>
+      <width>601</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Preview</string>
+    </property>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>23</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>LOB limit:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Trades limit:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>93</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>List of symbols:</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_previewLOB">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>20</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_previewTradelimit">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>57</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_previewSymbol">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>90</y>
+       <width>111</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_editSettings">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>291</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Edit settings</string>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>LOB limit:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Trades limit:</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox_lob">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>27</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox_trades">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>67</y>
+       <width>42</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_resetExchangeConfig">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>340</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset exchange config</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_appSettings">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>10</y>
+      <width>311</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Symbol filter</string>
+    </property>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Symbol sorter:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>53</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Symbol base currency:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_symbolFilterSorter">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>20</y>
+       <width>111</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>alphabet quote</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>alphabet base</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>24h quote volume</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>24h base volume</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>vwap price</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>83</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Symbol quote currency:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_symbolFilterBase">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>50</y>
+       <width>111</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>no filter</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="comboBox_symbolFilterQuote">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>80</y>
+       <width>111</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>no filter</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="comboBox_symbolFilterType">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>110</y>
+       <width>111</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>no filter</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_19">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>113</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Symbol type:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_symbolFilterMaker">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>140</y>
+       <width>111</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>no filter</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_20">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>143</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Symbol maker fee:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_symbolFilterTaker">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>170</y>
+       <width>111</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>no filter</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_21">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>173</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Symbol maker fee:</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_Preview_2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>10</y>
+      <width>291</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Symbol Preview</string>
+    </property>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>base:</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_base">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>30</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>70</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>quote:</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_quote">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>70</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_maker">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>110</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>110</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>maker:</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_taker">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>150</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>150</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>taker:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>150</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>price step:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>30</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>type:</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_costmin">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>110</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_pricestep">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>150</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_active">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>70</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>70</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>active:</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser_type">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>30</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>110</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>cost min:</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_saveConfig">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>350</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save config</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
