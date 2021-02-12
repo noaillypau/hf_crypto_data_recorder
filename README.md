@@ -1,6 +1,15 @@
 # hf_crypto_data_recorder
 
-This app 
+This app is made to launch async subprocess of high frequency crypto data recording for trades/lob/ticker. \
+There is a config editor incuded to selected symbol & settings for the recording of an exchange. \
+Data are stored in a txt file with aiofiles, and called with ccxt. \ 
+Each hour there is a parallel process that take the txt file and upload it to Google cloud storage, to save hard disk space.
+
+GUI interface
+![alt text](src/exe.PNG)
+
+Functioning of the async sub processes
+![alt text](src/exe.PNG)
 
 # Requierment
 
