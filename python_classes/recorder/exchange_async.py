@@ -1,6 +1,7 @@
 import ccxt.async_support as ccxt # async ccxt
 import aiofiles as aiof # async write in file
-import numpy as np, time, datetime
+import numpy as np, time, datetime, os
+
 
 
 class Exchange():
@@ -13,11 +14,23 @@ class Exchange():
         self.exchange = getattr(ccxt, name_exchange) () 
         self.name_exchange = name_exchange
 
+        try:
+            print(os.listdir('data'))
+        except Exception as e:
+            os.mkdir('data')
+
+
+
     # main functions
 
     async def record_data(self, symbol):
-        data_to_reccord = await self.get_data(symbol)
-        await self.upload_data(symbol, data_to_reccord)
+        try:
+            data_to_record = await self.get_data(symbol)
+            await self.upload_data(symbol, data_to_record)
+            time.sleep(1)
+        except Exception as e:
+            print(symbol,str(e))
+            time.sleep(1)
 
     async def get_data(self, symbol):
         lob = await self.exchange.fetch_order_book(symbol, limit=self.limit_lob)
@@ -25,11 +38,12 @@ class Exchange():
         ticker = await self.exchange.fetchTicker(symbol)
         return self.process_data(lob, trades, ticker)
 
-    async def upload_data(self, symbol, data_to_reccord):
-        date_ticker = datetime.datetime.fromtimestamp(data_to_reccord['timestamp_ticker']/1000)
-        filename = '{}_{}_{}{}{}{}.txt'.format(self.name_exchange,symbol.replace('/',''),date_ticker.year,date_ticker.month,date_ticker.day,date_ticker.hour)
+    async def upload_data(self, symbol, data_to_record):
+        date_ticker = datetime.datetime.fromtimestamp(data_to_record['timestamp_ticker']/1000)
+        date_str = date_ticker.strftime('%Y%m%d')
+        filename = '{}_{}_{}.txt'.format(self.name_exchange,symbol.replace('/',''),date_str)
         async with aiof.open('data/'+filename, "a") as out:
-            await out.write(str(data_to_reccord)+'|')
+            await out.write(str(data_to_record)+'|')
             await out.flush()
 
 

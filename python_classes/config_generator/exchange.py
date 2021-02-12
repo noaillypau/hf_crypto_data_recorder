@@ -1,26 +1,12 @@
 import ccxt, pandas as pd, numpy as np, json, os
-
-def get_list_exchange():
-    return ccxt.exchanges
-
-def get_ccxt_ex(exchange_name):
-    return getattr(ccxt, exchange_name)()
-
-def get_list_markets(ccxt_ex):
-    return ccxt_ex.fetchMarkets()
-
-def get_list_symbol(list_markets):
-    return list(ccxt_ex.fetchMarkets().keys())
-
-
-
+from python_classes.config_generator.config import Config
 
 class Exchange():
-    def __init__(self, name_exchange):
+    def __init__(self, name_exchange, config):
         self.name_exchange = name_exchange
         self.ex = getattr(ccxt, name_exchange)()
         self.list_markets = self.get_list_markets()
-        self.config = Config(name_exchange)
+        self.config = Config(name_exchange, config)
 
     def get_list_markets(self):
         return self.ex.fetchMarkets()
@@ -176,28 +162,3 @@ class Exchange():
     def sort_symbol_by_vwap(self, symbol_list):
         sub_list_markets = [market for market in [dict for key,dict in self.ex.fetchTickers().items()] if market['symbol'] in symbol_list]
         return list(pd.DataFrame(sub_list_markets).fillna(0).sort_values('vwap').iloc[::-1].symbol)
-
-
-
-class Config():
-    def __init__(self, name_exchange):
-        self.name_exchange = name_exchange
-        self.list_symbol = []
-        self.lob_limit = 20
-        self.trades_limit = 100
-
-    def add_symbol(self,symbol):
-        if symbol not in self.list_symbol:
-            self.list_symbol.append(symbol)
-
-    def reset(self):
-        self.__init__(self.name_exchange)
-
-    def save(self):
-        with open('config_exe.json','r') as f:
-            config_exe = json.load(f)
-            f.close()
-        txt = 'LIST_SYMBOL={}\nLOB_LIMIT={}\nTRADES_LIMIT={}'.format(str(self.list_symbol),self.lob_limit,self.trades_limit)
-        with open('C://Users//Paul Noailly//Work//Trading//crypto//DATA//HF_live_recording/configs/{}.py'.format(self.name_exchange),'w') as f:
-            f.write(txt)
-            f.close()
