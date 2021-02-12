@@ -9,7 +9,7 @@ GUI interface
 ![alt text](src/exe.PNG)
 
 Functioning of the async sub processes
-![alt text](src/exe.PNG)
+![alt text](src/subprocess.PNG)
 
 # Requierment
 
