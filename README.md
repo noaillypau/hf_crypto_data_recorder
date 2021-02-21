@@ -26,6 +26,15 @@ Functioning of the async sub processes
 - [ ] edit the config file
 - [ ] in terminal run `pyinstaller.exe --onefile --windowed --icon=icon.ico main.py`
 
+# No GUI version
+
+If you want to decentralize the recording, and deploy the recording loops on cloud instances, then you should use the scripts in `no_gui`. \
+It contain 3 files:
+ * `recorder.py`
+ * `uploader.py`
+ * `config_maker.ipynb`
+Within `recorder.py` you can lauch the script using ```ssh python recorder.py NAME_EXCHANGE ID_CONFIG```
+
   
   
 # Todo List
