@@ -43,3 +43,5 @@ Functioning of the async sub processes
 * ccxt doc: https://github.com/ccxt/ccxt/wiki/Manual#unified-api
 
 * google storage doc: https://cloud.google.com/storage/docs?hl=fr
+
+* google cloud auth: https://cloud.google.com/storage/docs/reference/libraries?authuser=2
