@@ -33,7 +33,10 @@ It contain 3 files:
  * `recorder.py`
  * `uploader.py`
  * `config_maker.ipynb`
-Within `recorder.py` you can lauch the script using ```ssh python recorder.py NAME_EXCHANGE ID_CONFIG```
+Within `recorder.py` you can lauch the script using: \
+```ssh
+python recorder.py NAME_EXCHANGE ID_CONFIG
+```
 
   
   
